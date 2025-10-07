@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coffee: #4f3e32;
+  --color-soft: #f6f4f3;
+  --color-gray1: #979797;
+  --color-red1: #c54949;
+}
+
+body {
+  background: #f9f9f9;
+  color: #4a3f36;
+}
+
+[data-next-dev-overlay] {
+  display: none !important;
+}
+
+.btn {
+  @apply shadow-[0_0_1px_1px_black]/5 transition-all duration-200 flex items-center justify-center;
+}
+
+.qty-btn {
+  @apply w-8 h-8;
+}
+
+.light {
+  @apply text-[90%] font-light
+}
+
+.empty-cart {
+  background: radial-gradient(at 50% 50%, #0005 10%, transparent 50%);
+}
+
+@keyframes button-shimmer {
+  0% { background-position: 20% 0 }
+  to { background-position: -60% 0 }
+}
+
+.button-shimmer {
+  background-image: linear-gradient(
+    135deg,
+    transparent 50%,
+    #c8936d 55%,
+    #c8936d 70%,
+    #ffe0ca 78%,
+    #c8936d 85%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+}
+
+.button-shimmer:hover {
+  animation: button-shimmer 600ms forwards;
+}
