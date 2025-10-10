@@ -3,7 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "@/store/cartSlice";
 import { RootState } from "@/store/store";
-import { ShoppingBasketIcon, X } from "lucide-react";
+import { ShoppingBag, ShoppingBasketIcon, ShoppingCart, X } from "lucide-react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import CartItem from "./CartItem";
 
@@ -57,7 +57,16 @@ export default function SidebarCart({ isOpen, onClose }: CartProps) {
                 {cartItems.length === 0 
                 ? (
                     <div className="w-1/1 h-fit max-md:p-4 mx-auto flex flex-col items-center text-[#bbb] font-medium md:text-sm">
-                        <ShoppingBasketIcon className="w-1/3 h-1/3" />
+                        
+                        <svg viewBox="0 0 24 24" fill="none" className="mr-[1.3vw] w-1/3 h-1/3">
+                            <defs>
+                                <radialGradient id="grad-stroke" cx="50%" cy="0%" r="100%">
+                                <stop offset="80%" stopColor="#bbb" />
+                                <stop offset="100%" stopColor="#999" />
+                                </radialGradient>
+                            </defs>
+                            <ShoppingCart stroke="url(#grad-stroke)" />
+                        </svg>
                         <div className="empty-cart w-1/2 h-6 mb-2"/>
                         <p>Здесь пока пусто...</p>
                     </div>
